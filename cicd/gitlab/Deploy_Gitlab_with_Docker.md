@@ -23,7 +23,10 @@ source ~/.bashrc
 3. 运行gitlab-ce容器
 
 ```bash
-docker run -p 443:443 -p 2222:22 -p 80:80 --name gitlab --volume $GITLAB_CONFIG:/etc/gitlab --volume $GITLAB_LOGS:/var/log/gitlab --volume $GITLAB_DATA:/var/opt/gitlab gitlab/gitlab-ce
+docker run -p 443:443 -p 2222:22 -p 80:80 --name gitlab \
+--volume $GITLAB_CONFIG:/etc/gitlab \
+--volume $GITLAB_LOGS:/var/log/gitlab \
+--volume $GITLAB_DATA:/var/opt/gitlab gitlab/gitlab-ce
 ```
 
 # 配置Gitlab
