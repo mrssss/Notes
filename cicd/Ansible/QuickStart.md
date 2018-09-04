@@ -28,4 +28,14 @@ pip install ansible
 3. ~/.ansible.cfg
 4. /etc/ansible/ansible.cfg
 
-### [配置文件模板](./ansible.cfg)
+### [配置文件模板](./ansible.cfg
+
+## Playbooks
+
+> Playbooks是Ansible的配置，部署，编排语言。它描述了我们希望目标主机执行的动作序列。可以看作一种实施方案。
+
+* [Playbooks 的最佳实践](https://github.com/ansible/ansible-examples)
+
+> Playbooks的格式是YAML。
+
+> playbook由一个或多个“plays”组成。它的内容是一个以“play”为元素的列表。
