@@ -1,6 +1,17 @@
-# Installation
+<!-- TOC START min:1 max:5 link:true update:true -->
+- [Install and configure](#install-and-configure)
+  - [Environment](#environment)
+  - [Install](#install)
+    - [ubuntu](#ubuntu)
+    - [Windows and Mac](#windows-and-mac)
+  - [uninstall](#uninstall)
 
-## 运行环境
+<!-- TOC END -->
+
+---
+# Install and configure
+---
+## Environment
 
 * Linux
 * 大硬盘
@@ -15,10 +26,11 @@
 uname -r
 ```
 
-## 安装
-### ubuntu
+---
 
-1. 使用官网脚本安装
+## Install
+### ubuntu
+1.使用官网脚本安装
 
 ```bash
 sudo apt-get update
@@ -27,42 +39,43 @@ sudo apt-get install wget
 wget -qO- https://get.Docker.com/ | sh
 ```
 
-2. 验证是否安装成功
+2.验证是否安装成功
 
 ```bash
 sudo docker --version
 sudo docker run hello-world
 ```
 
-3. 配置
+3.配置
+> Docker Deamon会监听本地的一个socket文件，
+> 访问该文件需要root权限，
+> 所以执行docker命令都要使用sudo提权。
+> 可以通过一下操作来回避掉socket文件没有读写权限的问题。
 
+> 创建Docker组
 ```bash
-# Docker Deamon会监听本地的一个socket文件，
-# 访问该文件需要root权限，
-# 所以执行docker命令都要使用sudo提权。
-
-# 可以通过一下操作来回避掉socket文件没有读写权限的问题。
-
-# 创建Docker组
 groupadd Docker
-
-# 将当前用户添加到组中
+```
+> 将当前用户添加到组中
+```bash
 usermod -aG Docker $USER
 ```
 
-### Windows和Mac
+### Windows and Mac
 
 > 直接在官网上下载安装包
 
-## 卸载
+---
 
-* 卸载安装包和依赖模块
+## uninstall
+
+> 卸载安装包和依赖模块
 
 ```bash
 sudo apt-get autoremove --purge lxc-Docker
 ```
 
-* 删除配置文件及数据
+> 删除配置文件及数据
 
 ```bash
 rm -rf /var/lib/Docker
