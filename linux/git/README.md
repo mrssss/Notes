@@ -15,3 +15,5 @@
 * Git仓库
 * 暂存区域
 * 工作目录
+
+![Git 状态转换](../../Resource/linux/git/git_states.jpg)
